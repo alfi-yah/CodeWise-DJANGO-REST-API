@@ -1,0 +1,25 @@
+from django.db import models
+
+# Create your models here.
+
+class Questions(models.Model):
+	title = models.CharField(max_length=200)
+	LANGUAGE_CHOICES = (
+		("python", "python"),                                           
+		("java", "java"),
+		("javascript", "javascript"),
+		("c", "c")
+	)
+	language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, default="python")
+	DIFFICULTY_LEVEL = (
+		("easy", "easy"),
+		("medium", "medium"),
+		("hard", "hard")
+	)
+	difficulty_level = models.CharField(max_length=200, choices=DIFFICULTY_LEVEL, default="easy")
+	notes = models.TextField()
+	topic = models.CharField()
+	published_date = models.DateTimeField(auto_now_add=True)
+	sample_input = models.TextField()
+	sample_output = models.TextField()
+	is_active = models.BooleanField(default=True)
