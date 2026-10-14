@@ -37,3 +37,6 @@ Content-Type: application/json
 	"is_active" : true
 
 }
+
+###
+DELETE http://127.0.0.1:8000/questions/3/
